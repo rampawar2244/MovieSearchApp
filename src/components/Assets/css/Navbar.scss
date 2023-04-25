@@ -1,0 +1,10 @@
+.Navbar{
+    .navbarItem{
+        display: flex;
+        .navbarItems{
+            list-style: none; 
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    }
+}
