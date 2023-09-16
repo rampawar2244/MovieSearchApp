@@ -10,11 +10,11 @@ function MovieCard({ movie, isFavorite, toggleFavorite }) {
   };
 
   const heartIconStyle = {
-    color: filled ? "red" : "inherit", // Change color to red when filled, otherwise inherit the color
-    cursor: "pointer", // Add a pointer cursor to indicate clickability
-    border: filled ? "2px solid red" : "2px solid transparent", // Add border when filled, transparent otherwise
-    borderRadius: "50%", // Make it a circle
-    padding: "2px", // Add padding for spacing
+    color: filled ? "red" : "inherit", 
+    cursor: "pointer",  
+    border: filled ? "2px solid red" : "2px solid transparent",  
+    borderRadius: "50%",  
+    padding: "2px", 
   };
 
   return (
