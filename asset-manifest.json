@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/rampawar2244/MovieSearchApp/static/css/main.77041a65.css",
+    "main.js": "/rampawar2244/MovieSearchApp/static/js/main.0f475c82.js",
+    "static/css/956.3c6a0a67.chunk.css": "/rampawar2244/MovieSearchApp/static/css/956.3c6a0a67.chunk.css",
+    "static/js/956.ed2237a2.chunk.js": "/rampawar2244/MovieSearchApp/static/js/956.ed2237a2.chunk.js",
+    "index.html": "/rampawar2244/MovieSearchApp/index.html",
+    "main.77041a65.css.map": "/rampawar2244/MovieSearchApp/static/css/main.77041a65.css.map",
+    "main.0f475c82.js.map": "/rampawar2244/MovieSearchApp/static/js/main.0f475c82.js.map",
+    "956.3c6a0a67.chunk.css.map": "/rampawar2244/MovieSearchApp/static/css/956.3c6a0a67.chunk.css.map",
+    "956.ed2237a2.chunk.js.map": "/rampawar2244/MovieSearchApp/static/js/956.ed2237a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77041a65.css",
+    "static/js/main.0f475c82.js"
+  ]
+}
