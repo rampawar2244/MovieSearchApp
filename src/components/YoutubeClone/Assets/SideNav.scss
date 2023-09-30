@@ -1,0 +1,39 @@
+.sidenav{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    .sidenav__icon{
+        color: #606060;
+        font-size: large !important;
+    }
+   
+    .sidenav__title{
+      flex: 1;
+      margin-left: 20px;
+      font-size: 12px;
+      margin: 0 0 0 20px;
+      font-weight: 500;
+    }
+    &:hover{
+        background-color: lightgray;
+        cursor: pointer;
+    }
+    &:hover > .sidenav__icon{
+        color: red;
+    }
+    &:hover > .sidenav__title{
+        font-weight: bold;
+    }
+
+    &.selected{
+        background-color:lightgray!important ;
+        &.selected > .sidenav__icon{
+            color: red;
+        }
+        &.selected > .sidenav__title{
+            font-weight: bold;
+        }
+    }
+    
+    
+}

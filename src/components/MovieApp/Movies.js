@@ -1,6 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import axios from "axios";
-const MovieCards = lazy(() => import('./MovieCard'))
+import "./Movies.css"; // Import your CSS file for additional styling
+const MovieCards = lazy(() => import('./MovieCard.js'))
 
 function Movies() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -85,56 +86,57 @@ function Movies() {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-  return (
-    <div className="text-center">
-      <h1>Search Movies</h1>
-      <input
-        type="search"
-        className="w-75 "
-        placeholder="Search for movies..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button className="btn btn-light" onClick={handleSearch}>
-        Search
-      </button>
-      {searchQuery === "" && (
-        <div>Please enter a movie title to search.</div>
-      )}
-      {!moviesFound && searchQuery !== "" && (
-        <div>Movie not found.</div>
-      )}
-      <ul className="pagination">
-        {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <button
-              onClick={() => paginate(number)}
-              className={`page-link ${
-                number === currentPage ? "active" : ""
-              }`}
-            >
-              {number}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="row d-flex m-0">
-        {currentMovies.map((movie) => {
-          return (
-            <Suspense fallback={<div>Loading...</div>} key={movie._id}>
-              <div className="col">
-                <MovieCards
-                  movie={movie}
-                  toggleFavorite={() => toggleFavorite(movie)}
-                />
-              </div>
-            </Suspense>
-          );
-        })}
+    return (
+      <div className="movies-container">
+        <h1 className="movies-title">Search Movies</h1>
+        <div className="search-container">
+          <input
+            type="search"
+            className="search-input"
+            placeholder="Search for movies..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+        {searchQuery === "" && (
+          <div className="message">Please enter a movie title to search.</div>
+        )}
+        {!moviesFound && searchQuery !== "" && (
+          <div className="message">Movie not found.</div>
+        )}
+        <ul className="pagination">
+          {pageNumbers.map((number) => (
+            <li key={number} className="page-item">
+              <button
+                onClick={() => paginate(number)}
+                className={`page-link ${
+                  number === currentPage ? "active" : ""
+                }`}
+              >
+                {number}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="movie-cards-container">
+          {currentMovies.map((movie) => {
+            return (
+              <Suspense fallback={<div>Loading...</div>} key={movie._id}>
+                <div className="">
+                  <MovieCards
+                    movie={movie}
+                    toggleFavorite={() => toggleFavorite(movie)}
+                  />
+                </div>
+              </Suspense>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
 }
-
-export default Movies;
+  export default Movies;
+  
